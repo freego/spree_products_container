@@ -1,0 +1,10 @@
+it:
+  activerecord:
+    attributes:
+      spree/products_container:
+        name: Nome
+        description: Descrizione
+        start_at: Inizia il
+        end_at: Finisce il
+        active: Attivo
+        image: Immagine

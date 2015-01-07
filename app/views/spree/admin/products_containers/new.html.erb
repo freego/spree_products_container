@@ -1,0 +1,23 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:new, scope: @object_name.pluralize) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li>
+    <%= button_link_to Spree.t(:back_to_list, scope: @object_name.pluralize), collection_url, icon: 'arrow-left' %>
+  </li>
+<% end %>
+
+<div data-hook="admin_<%= @object_name %>_new_form_header">
+  <%= render 'spree/shared/error_messages', target: @object %>
+</div>
+
+<div data-hook="admin_<%= @object_name %>_new_form">
+  <%= form_for [:admin, @object] do |f| %>
+    <%= render 'form', f: f %>
+
+    <div data-hook="admin_<%= @object_name %>_new_form_buttons">
+      <%= render 'spree/admin/shared/new_resource_links' %>
+    </div>
+  <% end %>
+</div>
