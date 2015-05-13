@@ -11,18 +11,19 @@ module Spree
       private
 
       def set_object_name
-        @object_name = object_name
-        @objects_name = object_name.pluralize
+        @object_name = resource.object_name
+        @objects_name = resource.object_name.pluralize
       end
 
       def parse_product_ids
-        if params[object_name][:product_ids].present?
-          params[object_name][:product_ids] = params[object_name][:product_ids].split(',')
+        parameter = params[resource.object_name]
+        if parameter[:product_ids].present?
+          parameter[:product_ids] = parameter[:product_ids].split(',')
 
           # TODO FIXME
           # will recreate all the associations if something changed
           # quick way to always keep the submitted product sorting
-          if @object && params[object_name][:product_ids] != @object.product_ids.map(&:to_s)
+          if @object && parameter[:product_ids] != @object.product_ids.map(&:to_s)
             @object.products_container_products.destroy_all
           end
         end

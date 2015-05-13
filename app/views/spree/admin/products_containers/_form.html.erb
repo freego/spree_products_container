@@ -38,7 +38,7 @@
     <% end %>
     <%= f.field_container :products, class: ['form-group'] do %>
       <%= f.label :product_ids, Spree.t(:products) %><br />
-      <%= f.hidden_field :product_ids, value: f.object.product_ids.join(','), class: 'form-control products_container_products_select' %>
+      <%= f.hidden_field :product_ids, value: f.object.product_ids.join(','), id: 'products_container_products_select' %>
     <% end %>
   </div>
 </div>
