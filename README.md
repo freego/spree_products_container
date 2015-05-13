@@ -1,7 +1,7 @@
 SpreeProductsContainer
 ======================
 
-Generic Product Container.
+Generic Products Container for Spree.
 
 Installation
 ------------
@@ -9,7 +9,7 @@ Installation
 Add spree_products_container to your Gemfile:
 
 ```ruby
-gem 'spree_products_container'
+gem 'spree_products_container', github: 'freego/spree_products_container', branch: 'X-X-stable'
 ```
 
 Bundle your dependencies and run the installation generator:
@@ -36,4 +36,4 @@ Simply add this require statement to your spec_helper:
 require 'spree_products_container/factories'
 ```
 
-Copyright (c) 2014 Alessandro Lepore, released under the New BSD License
+Copyright (c) 2015 Alessandro Lepore, released under the New BSD License
