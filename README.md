@@ -1,7 +1,7 @@
 SpreeProductsContainer
 ======================
 
-Generic Products Container for Spree.
+Easily generate (multiple) resources than contain products.
 
 Installation
 ------------
@@ -18,6 +18,33 @@ Bundle your dependencies and run the installation generator:
 bundle
 bundle exec rails g spree_products_container:install
 ```
+
+Usage
+=====
+
+Generate a new `Look` resource:
+
+    $ rails generate spree_products_container:resource look
+
+
+Example output:
+
+    create  app/models/spree/look.rb
+    create  app/controllers/spree/admin/looks_controller.rb
+    create  app/overrides/spree/layouts/admin/add_spree_looks.html.erb.deface
+    append  config/routes.rb
+    create  config/locales/en_looks.yml
+    create  config/locales/it_looks.yml
+
+Then run the migration:
+
+    $ rake db:migrate
+
+To rollback:
+
+    $ rake db:rollback
+    $ rails destroy spree_products_container:resource look
+
 
 Testing
 -------

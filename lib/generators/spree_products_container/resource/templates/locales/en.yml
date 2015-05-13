@@ -1,0 +1,6 @@
+en:
+  spree:
+    <%= plural_name %>:
+      new: New <%= singular_name %>
+      listing: Listing <%= singular_name %>
+      editing: Edit <%= singular_name %>
