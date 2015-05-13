@@ -1,44 +1,44 @@
 <span id="object-id" data-object-id="<%= f.object.id %>"></span>
 
 <div data-hook="admin_products_container_form_fields" class="row">
-  <div class="twelve columns">
-    <%= f.field_container :name do %>
+  <div class="col-md-6">
+    <%= f.field_container :name, class: ['form-group'] do %>
       <%= f.label :name %>
-      <%= f.text_field :name, class: 'fullwidth' %>
+      <%= f.text_field :name, class: 'form-control' %>
       <%= error_message_on :products_container, :name %>
     <% end %>
-    <%= f.field_container :description do %>
+    <%= f.field_container :description, class: ['form-group'] do %>
       <%= f.label :description %>
-      <%= f.text_area :description, class: 'fullwidth' %>
+      <%= f.text_area :description, class: 'form-control' %>
       <%= error_message_on :products_container, :description %>
     <% end %>
-    <%= f.field_container :start_at do %>
+    <%= f.field_container :start_at, class: ['form-group'] do %>
       <%= f.label :start_at %>
-      <%= f.text_field :start_at, value: datepicker_field_value(f.object.start_at), class: 'datepicker' %>
+      <%= f.text_field :start_at, value: datepicker_field_value(f.object.start_at), class: 'form-control datepicker' %>
       <%= error_message_on :products_container, :start_at %>
     <% end %>
-    <%= f.field_container :end_at do %>
+    <%= f.field_container :end_at, class: ['form-group'] do %>
       <%= f.label :end_at %>
-      <%= f.text_field :end_at, value: datepicker_field_value(f.object.end_at), class: 'datepicker' %>
+      <%= f.text_field :end_at, value: datepicker_field_value(f.object.end_at), class: 'form-control datepicker' %>
       <%= error_message_on :products_container, :end_at %>
     <% end %>
-    <%= f.field_container :active do %>
+    <%= f.field_container :active, class: ['form-group'] do %>
       <%= f.label :active %>
-      <%= f.check_box :active, class: 'fullwidth' %>
+      <%= f.check_box :active, class: 'form-control' %>
       <%= error_message_on :products_container, :active %>
     <% end %>
-    <%= f.field_container :image do %>
+    <%= f.field_container :image, class: ['form-group'] do %>
       <%= f.label :image %>
-      <%= f.file_field :image, class: 'fullwidth' %>
+      <%= f.file_field :image, class: 'form-control' %>
       <%= error_message_on :products_container, :image %>
       <% if f.object.image_file_name %>
         <br><br>
         <%= image_tag f.object.image.url(:large) -%>
       <% end %>
     <% end %>
-    <%= f.field_container :products do %>
+    <%= f.field_container :products, class: ['form-group'] do %>
       <%= f.label :product_ids, Spree.t(:products) %><br />
-      <%= f.hidden_field :product_ids, value: f.object.product_ids.join(','), class: 'fullwidth products_container_products_select' %>
+      <%= f.hidden_field :product_ids, value: f.object.product_ids.join(','), class: 'form-control products_container_products_select' %>
     <% end %>
   </div>
 </div>

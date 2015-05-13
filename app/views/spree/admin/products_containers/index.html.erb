@@ -4,16 +4,15 @@
 
 <% content_for :page_actions do %>
   <li>
-    <%= button_link_to Spree.t(:new, scope: @objects_name), new_object_url, icon: 'plus', id: 'admin_new_products_container_link' %>
+    <%= button_link_to Spree.t(:new, scope: @objects_name),
+                       new_object_url,
+                       class: 'btn-success',
+                       icon: 'add',
+                       id: 'admin_new_products_container_link' %>
   </li>
-<% end %>
+<% end if can?(:create, Spree::ProductsContainer) %>
 
-<table class="index sortable" id="listing_<%= @objects_name %>" data-hook data-sortable-link="<%= update_positions_admin_products_containers_url %>">
-  <colgroup>
-    <col style="width: 10%">
-    <col style="width: 75%">
-    <col style="width: 15%">
-  </colgroup>
+<table class="table sortable" id="listing_<%= @objects_name %>" data-hook data-sortable-link="<%= update_positions_admin_products_containers_url %>">
   <thead>
     <tr data-hook="admin_<%= @objects_name %>_index_headers">
       <th class="no-border"></td>

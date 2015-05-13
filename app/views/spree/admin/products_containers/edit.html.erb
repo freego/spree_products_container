@@ -2,22 +2,17 @@
   <%= Spree.t(:editing, scope: @objects_name) %>
 <% end %>
 
-<% content_for :page_actions do %>
-  <li>
-    <%= button_link_to Spree.t(:back_to_list, scope: @objects_name), collection_url, icon: 'arrow-left' %>
-  </li>
-<% end %>
-
 <div data-hook="admin_<%= @object_name %>_edit_form_header">
   <%= render 'spree/shared/error_messages', target: @object %>
 </div>
 
 <div data-hook="admin_<%= @object_name %>_edit_form">
   <%= form_for [:admin, @object] do |f| %>
-    <%= render 'form', f: f %>
-
-    <div data-hook="admin_<%= @object_name %>_edit_form_buttons">
-      <%= render 'spree/admin/shared/edit_resource_links' %>
+    <div class="row">
+      <div class="col-md-12">
+        <%= render 'form', f: f %>
+        <%= render 'spree/admin/shared/edit_resource_links' %>
+      </div>
     </div>
   <% end %>
 </div>
