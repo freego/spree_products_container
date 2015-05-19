@@ -1,6 +1,9 @@
 it:
   spree:
+    admin:
+      tab:
+        <%= plural_name %>: <%= plural_name.humanize %>
     <%= plural_name %>:
-      new: Nuovo <%= singular_name %>
-      listing: Lista <%= singular_name %>
-      editing: Modifica <%= singular_name %>
+      new: Nuovo <%= singular_name.humanize %>
+      listing: Lista <%= singular_name.humanize %>
+      editing: Modifica <%= singular_name.humanize %>

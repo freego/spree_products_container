@@ -22,7 +22,7 @@ module SpreeProductsContainer
 
     def create_locale
       %w(en it).each do |locale|
-        template "locales/#{locale}.yml", "config/locales/#{locale}_#{plural_name}.yml"
+        template "locales/#{locale}.yml", "config/locales/#{plural_name}.#{locale}.yml"
       end
     end
 
