@@ -13,7 +13,7 @@
 <table class="table sortable" id="listing_<%= @objects_name %>" data-hook data-sortable-link="<%= update_positions_admin_products_containers_url %>">
   <thead>
     <tr data-hook="admin_<%= @objects_name %>_index_headers">
-      <th class="no-border"></td>
+      <th class="no-border"></th>
       <th><%= t(:name, scope: "activerecord.attributes.spree/products_container") %></th>
       <th data-hook="admin_<%= @objects_name %>_index_header_actions" class="actions"></th>
     </tr>
@@ -21,7 +21,7 @@
   <tbody>
     <% @objects.each do |object| %>
       <tr id="<%= spree_dom_id object %>" data-hook="admin_<%= @objects_name %>_index_rows" class="<%= cycle('odd', 'even')%>">
-        <td class="no-border"><span class="handle"></span></td>
+        <td class="move-handle"><span class="icon icon-move handle"></span></td>
         <td><%= link_to object.name, edit_object_url(object) %></td>
         <td data-hook="admin_<%= @objects_name %>_index_row_actions" class="actions text-right">
           <%= link_to_edit object, no_text: true %>
