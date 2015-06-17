@@ -22,7 +22,7 @@ $(document).ready(function () {
         data: function (term, page) {
           return {
             q: {
-              product_translation_name_or_variants_including_master_sku_cont: term
+              translations_name_or_variants_including_master_sku_cont: term
             },
             token: Spree.api_key
           };
