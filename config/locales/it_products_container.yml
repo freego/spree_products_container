@@ -8,3 +8,5 @@ it:
         end_at: Finisce il
         active: Attivo
         image: Immagine
+  spree:
+    preview: Anteprima

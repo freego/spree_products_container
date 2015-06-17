@@ -3,3 +3,10 @@ en:
     attributes:
       spree/products_container:
         name: Name
+        description: Description
+        start_at: Start at
+        end_at: End at
+        active: Active
+        image: Image
+  spree:
+    preview: Preview
