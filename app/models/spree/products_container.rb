@@ -1,5 +1,5 @@
 module Spree
-  class ProductsContainer < ActiveRecord::Base
+  class ProductsContainer < Spree::Base
     extend FriendlyId
     friendly_id :slug_candidates, use: [:slugged, :finders]
 
